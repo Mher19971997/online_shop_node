@@ -1,0 +1,17 @@
+const app = require('./../app');
+const sequelize = require('./../libs/service/src/db_connect');
+const repositories = require('./../libs/service/src/repository/repository');
+const configService = require('../libs/shared/src/config/config.service');
+
+const start = async () => {
+  try {
+    const PORT = configService.get('app.http.port');
+    await sequelize.authenticate();
+    // await sequelize.sync({force:true});
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+start();

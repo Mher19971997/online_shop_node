@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "shop",
+    "password": "root",
+    "database": "postgres",
+    "host": "localhost",
+    "dialect": "postgres",
+    "migrationStorageTableName": "sequalize_migrations"
+  },
+  "production": {
+    "username": "shop",
+    "password": "root",
+    "database": "postgres",
+    "host": "localhost",
+    "dialect": "postgres",
+    "migrationStorageTableName": "sequalize_migrations"
+  }
+}

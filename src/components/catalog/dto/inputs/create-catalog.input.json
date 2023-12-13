@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "subCategoryUuid": {
+      "type": "string"
+    },
+    "description":{
+      "type":"string"
+    },
+    "categoryUuid": {
+      "type": "string"
+    },
+    "info": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "catalogUuid": { "type": "string" }
+        },
+        "required": ["title", "description"]
+      }
+    }
+  },
+  "required": ["name", "price", "subCategoryUuid", "categoryUuid"]
+}

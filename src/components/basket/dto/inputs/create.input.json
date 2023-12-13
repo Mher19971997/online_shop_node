@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "catalogUuid": {
+      "type": "string"
+    }
+  },
+  "required": ["catalogUuid"]
+}

@@ -1,0 +1,54 @@
+{
+  app: {
+    http: {
+      port: 3001,
+      dev: 'dev'
+    }
+  },
+  service: {
+    nodemailer: {
+      service: 'gmail',
+      auth: {
+        user: 'tigran.manukyan.2002@gmail.com',
+        pass: 'jtnwhhnuzeofcrqs'
+      },
+      options: {
+        attachments: [
+          {
+            filename: 'image.png',
+            path: 'https://i.pinimg.com/originals/c1/92/9d/c1929d3492c2f64ab65b43808c072043.jpg',
+            cid: 'unique@kreata.ee'
+          }
+        ]
+      }
+    }
+  },
+  crypto: {
+    pbkdf2: {
+      iterations: 1000,
+      keylen: 513,
+      digest: 'sha512',
+      secret: "qwerqyuiqpasdqgqwerghjkmnnbvchjklzqcvbnm1234567890-=[];',./"
+    },
+    jwt: {
+      secret: 'jwt-secret',
+      extraOptions: {
+        shortExpiresIn: '1 d',
+        longExpiresIn: '30 d'
+      },
+      signOptions: {
+        algorithm: 'HS256',
+        expiresIn: '365 d'
+      }
+    }
+  },
+  db: {
+    postgres: {
+      name: 'shop',
+      user: 'postgres',
+      password: 'root',
+      host: 'localhost',
+      port: 5432
+    }
+  }
+}

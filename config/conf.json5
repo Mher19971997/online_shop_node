@@ -1,0 +1,65 @@
+{
+  "app": {
+    "http": {
+      "port": 3001,
+      "dev": "dev"
+    }
+  },
+  "card-api": {
+    "receiptBaseUrl": "http://localhost:3000/m/api/v1/transaction/receipt"
+  },
+  "service": {
+    "aws": {
+      "a3": {
+        "objectUrl": "https://tpm-m-assets.s3.eu-central-1.amazonaws.com"
+      }
+    },
+    "sendgrid": {
+      "defaults": { "from": "'No Reply' <p.hovsepyan@rocketech.it>" },
+      "transport": {
+        "auth": {
+          "pass": "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",
+          "user": "apikey"
+        },
+        "host": "smtp.sendgrid.net",
+        "secure": true
+      }
+    },
+    "apn": {
+      "topic": "Text-nPayMe",
+      "token": {
+        "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgRF6krfPDDDMHujzr\njpyR6aW895Gdee9apWo/v8Ul8WKgCgYIKoZIzj0DAQehRANCAARQAoU1B1arIqOj\nkZRbefB6FTrpnewIlz4CcI++SxPegm/u5Q/duas9t5HTM7n2+Xzv+XGdvoW1zaVp\nDr34rfnC\n-----END PRIVATE KEY-----",
+        "keyId": "VFU9CXYW7R",
+        "teamId": "AAKV4YQUHU"
+      }
+    }
+  },
+  "crypto": {
+    "pbkdf2": {
+      "iterations": 1000,
+      "keylen": 513,
+      "digest": "sha512",
+      "secret": "qwerqyuiqpasdqgqwerghjkmnnbvchjklzqcvbnm1234567890-=[];',./"
+    },
+    "jwt": {
+      "secret": "jwt-secret",
+      "extraOptions": {
+        "shortExpiresIn": "1 d",
+        "longExpiresIn": "30 d"
+      },
+      "signOptions": {
+        "algorithm": "HS256",
+        "expiresIn": "365 d"
+      }
+    }
+  },
+  "db": {
+    "postgres": {
+      "name": "test",
+      "user": "postgres",
+      "password": "root",
+      "host": "localhost",
+      "port": 5432
+    }
+  }
+}
